@@ -1,0 +1,26 @@
+name: Pruebas Node
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - release/*
+
+jobs:
+  testear-codigo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar pruebas unitarias
+        run: npx jest --config mat.test.json
+
