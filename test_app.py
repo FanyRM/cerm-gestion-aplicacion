@@ -6,3 +6,4 @@ def test_sumar():
     assert sumar(0, 0) == 0
     assert sumar(-5, -5) == -10
     assert sumar(10, -5) == 5
+    assert sumar(1, 2) == 4
